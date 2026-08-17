@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                // Chuyển code TypeScript thành JavaScript ES2020
+    "module": "NodeNext",              // Xác định cách sử dụng module theo Node.js hiện đại
+    "moduleResolution": "NodeNext",    // Cách TypeScript tìm và xử lý các module
+    "esModuleInterop": true,            // Cho phép import module CommonJS bằng cú pháp import
+    "resolveJsonModule": true,          // Cho phép import file .json vào TypeScript
+    "strict": true                      // Bật kiểm tra kiểu dữ liệu nghiêm ngặt
+  }
+}
