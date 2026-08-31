@@ -1,13 +1,16 @@
 import mongoose from "mongoose";
+
 const schema = new mongoose.Schema(
   {
-    fullname: String,
+    fullName: String,
     email: String,
     password: String
   },
   {
-    timestamps: true,
+    timestamps: true, 
   }
 );
+
 const AccountUser = mongoose.model('AccountUser', schema, "user-account");
+
 export default AccountUser;
