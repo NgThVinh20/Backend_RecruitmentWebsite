@@ -5,7 +5,7 @@ export const registerPost = async (req: Request, res: Response, next: NextFuncti
     fullName: Joi.string()
       .min(5)
       .max(50)
-      .required() // ham nay co tac dung bat boc phai nhap
+      .required() 
       .messages({
         "string.empty": "Vui lòng nhập họ tên!",
         "string.min": "Họ tên phải có ít nhất 5 ký tự!",
@@ -14,7 +14,7 @@ export const registerPost = async (req: Request, res: Response, next: NextFuncti
 
     email: Joi.string().email().required().messages({
       "string.empty": "Vui lòng nhập email của bạn!",
-      "string.email": "Email không đúng định dạng!",
+      "string.email ": "Email không đúng định dạng!",
     }),
 
     password: Joi.string()
@@ -50,16 +50,15 @@ export const registerPost = async (req: Request, res: Response, next: NextFuncti
   });
 
   const { error } = schema.validate(req.body);
-  //console.log(req.body);
 
   if (error) {
     const errorMessage = error.details[0].message;
 
-    return res.status(400).json({
+    res.json({
       code: "error",
       message: errorMessage,
     });
+    return;
   }
-
   next();
 };
