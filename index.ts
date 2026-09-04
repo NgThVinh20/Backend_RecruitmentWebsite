@@ -13,7 +13,8 @@ const port = 5000
 app.use(cors({
   origin:"http://localhost:3000",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-   allowedHeaders: ["content-Type", "Authorization"]
+   allowedHeaders: ["content-Type", "Authorization"],
+   credentials: true //cho phép gửi cookie
 }));
 
 app.use(express.json())
